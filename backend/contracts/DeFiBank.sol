@@ -8,7 +8,7 @@ contract DeFiBank {
     function depositBalance() public payable {
         require(msg.value > 0, "Must Send ETH");
         balances[msg.sender] += msg.value;
-
+        
         emit Deposited(msg.sender, msg.value);
     }
 }
