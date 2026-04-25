@@ -9,6 +9,6 @@ contract DeFiBank {
         require(msg.value > 0, "You Must Send ETH!");
 
         balances[msg.sender] += msg.value;
-        emit Deposited(msg.sender, masg.value);
+        emit Deposited(msg.sender, msg.value);
     }
 }
