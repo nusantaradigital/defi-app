@@ -17,10 +17,10 @@ contract DeFiBank {
         uint amount = balances[msg.sender];
         require(amount > 0, "Insufficience Balance!");
 
-        balances[msg.sender] = 0;
-
         (bool success, ) = payable(msg.sender).call{value: amount}("");
         require(success, "Transfer Invalid");
+
+        balances[msg.sender] = 0;
         emit Withdrew(msg.sender, amount);
     }
 }
